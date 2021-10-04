@@ -1,0 +1,42 @@
+<odoo>
+        <record id="product_excel_tree_view" model="ir.ui.view">
+        <field name="name">product_quantity_setter.product_excel.tree</field>
+        <field name="model">product_quantity_setter.product_excel</field>
+        <field name="arch" type="xml">
+            <tree string="Appointments">
+                <field name="product_excel_file"/>
+            </tree>
+        </field>
+    </record>
+    <record id="product_excel_form_view" model="ir.ui.view">
+        <field name="name">product_quantity_setter.product_excel.form</field>
+        <field name="model">product_quantity_setter.product_excel</field>
+        <field name="arch" type="xml">
+            <form string="Product adding excel">
+                <header>
+                    <button name="import_file" type="object" string="Upload" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="product_excel_file"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_excel_template_action" model="ir.actions.act_window">
+        <field name="name">Product Excel</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product_quantity_setter.product_excel</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Upload excel file to add products to inventory.
+            </p>
+        </field>
+    </record>z
+    <menuitem id="product_excel_menu" parent="sale.sale_menu_root" name="Product Excel" sequence="12"
+              action="product_excel_template_action"/>
+
+</odoo>
