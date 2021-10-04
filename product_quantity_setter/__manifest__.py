@@ -16,6 +16,7 @@
     'data': [
         'views/product_utility.xml'
     ],
+    'images': ['static/description/banner.png'],
     'demo': [],
     'installable': True,
     'application': True,
